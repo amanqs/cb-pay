@@ -62,6 +62,9 @@ app.post('/callback', async (req, res) => {
 ┊・ ©2024
 ╰┈┈┈┈┈┈┈┈`;
 
+
+      const akses = `/akses`;
+
       const botToken = process.env.BOT_TOKEN;
       await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         chat_id: chatId,
@@ -69,6 +72,17 @@ app.post('/callback', async (req, res) => {
         parse_mode: 'Markdown',
       });
       console.log(`Deposit successful message sent to ${chatId}`);
+    } else {
+      deposit.status = 'failed';
+    }
+  
+      const GID = '-1001591109995'
+      await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        chat_id: groupId,
+        text: akses,
+        parse_mode: 'MarkdownV2', // Gunakan 'MarkdownV2' untuk parsing yang benar
+      });
+      console.log(`Pembelian Otomatis via QRIS Berhasil Dek`);
     } else {
       deposit.status = 'failed';
     }
