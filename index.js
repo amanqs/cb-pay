@@ -83,10 +83,6 @@ app.post('/callback', async (req, res) => {
         parse_mode: 'MarkdownV2', // Gunakan 'MarkdownV2' untuk parsing yang benar
       });
       console.log(`Pembelian Otomatis via QRIS Berhasil Dek`);
-    } else {
-      deposit.status = 'failed';
-    }
-    
     // Simpan status deposit
     await deposit.save();
 
