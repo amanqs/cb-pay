@@ -71,18 +71,17 @@ app.post('/callback', async (req, res) => {
         text: message,
         parse_mode: 'Markdown',
       });
-      console.log(`Deposit successful message sent to ${chatId}`);
-    } else {
-      deposit.status = 'failed';
-    }
-  
-      const GID = '-1001591109995'
       await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         chat_id: groupId,
         text: akses,
         parse_mode: 'MarkdownV2', // Gunakan 'MarkdownV2' untuk parsing yang benar
       });
       console.log(`Pembelian Otomatis via QRIS Berhasil Dek`);
+      console.log(`Deposit successful message sent to ${chatId}`);
+    } else {
+      deposit.status = 'failed';
+    }
+
     // Simpan status deposit
     await deposit.save();
 
