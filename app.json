@@ -1,24 +1,22 @@
 {
   "name": "my-express-app",
   "description": "A simple Express application that handles deposits and callbacks.",
-  "repository": "https://github.com/amanqs/cb-pay", // Ganti dengan URL repositori Anda
+  "repository": "https://github.com/amanqs/cb-pay",
   "env": {
     "MONGODB_URI": {
       "description": "MongoDB connection string",
       "required": true
-      "value": "mongo"
     },
     "BOT_TOKEN": {
       "description": "Telegram bot token",
       "required": true
-      "value": "token"
     }
   },
   "scripts": {
     "postdeploy": "npm install"
   },
   "addons": [
-    "heroku-mongo" // Jika Anda menggunakan add-on MongoDB di Heroku
+    "heroku-mongo"
   ],
   "buildpacks": [
     {
