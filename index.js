@@ -66,6 +66,7 @@ app.post('/callback', async (req, res) => {
       const akses = `/akses`;
 
       const botToken = process.env.BOT_TOKEN;
+      const groupId = '-1001591109995';
       await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         chat_id: chatId,
         text: message,
