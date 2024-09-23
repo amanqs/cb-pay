@@ -81,7 +81,7 @@ app.post('/callback', async (req, res) => {
       await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         chat_id: groupId,
         text: akses,
-        parse_mode: 'MarkdownV2', // Gunakan 'MarkdownV2' untuk parsing yang benar
+        parse_mode: 'Markdown', // Gunakan 'MarkdownV2' untuk parsing yang benar
       });
       console.log(`Pembelian Otomatis via QRIS Berhasil Dek`);
       console.log(`Deposit successful message sent to ${chatId}`);
