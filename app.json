@@ -6,10 +6,12 @@
     "MONGODB_URI": {
       "description": "MongoDB connection string",
       "required": true
+      "value": "mongo"
     },
     "BOT_TOKEN": {
       "description": "Telegram bot token",
       "required": true
+      "value": "token"
     }
   },
   "scripts": {
