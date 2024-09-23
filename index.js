@@ -63,7 +63,13 @@ app.post('/callback', async (req, res) => {
 ╰┈┈┈┈┈┈┈┈`;
 
 
-      const akses = `/akses`;
+      const akses = `╭──── 〔 *DEPOSIT MASUK BOS* 〕
+┊・ 🏷️| Jumlah Deposit: Rp ${deposit.amount}
+┊・ 📦| Saldo Yang Sekarang: Rp ${user.saldo}
+┊・ 🧾| Status: ${deposit.status}
+┊ . 🦸| User:  ${chatId}
+┊ 
+╰┈┈┈┈┈┈┈┈`;
 
       const botToken = process.env.BOT_TOKEN;
       const groupId = '-1001591109995';
